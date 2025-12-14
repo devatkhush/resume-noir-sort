@@ -33,7 +33,7 @@ const Index = () => {
 
       <footer className="border-t border-border py-8">
         <div className="container text-center text-sm text-muted-foreground">
-          <p>© 2024 ResumeAI. Intelligent Resume Classification.</p>
+          <p>Made with ❤️ 2025 ResumeAI</p>
         </div>
       </footer>
     </div>
