@@ -25,15 +25,12 @@ export function HeroSection() {
             skills, and experience level. Save hours of manual screening.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-fade-up" style={{ animationDelay: '300ms' }}>
+          <div className="flex items-center justify-center mb-12 animate-fade-up" style={{ animationDelay: '300ms' }}>
             <Button variant="hero" asChild>
               <a href="#upload">
                 Get Started
                 <ArrowDown className="w-4 h-4" />
               </a>
-            </Button>
-            <Button variant="outline" size="lg">
-              View Demo
             </Button>
           </div>
 
