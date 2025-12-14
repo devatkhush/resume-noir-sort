@@ -1,12 +1,41 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Header } from '@/components/Header';
+import { HeroSection } from '@/components/HeroSection';
+import { UploadZone } from '@/components/UploadZone';
+import { Dashboard } from '@/components/Dashboard';
+import { useResumeClassification } from '@/hooks/useResumeClassification';
 
 const Index = () => {
+  const { resumes, isProcessing, processFiles, deleteResume } = useResumeClassification();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <Header />
+      
+      <main>
+        <HeroSection />
+        
+        <section className="container py-16 space-y-16">
+          <div className="max-w-2xl mx-auto">
+            <UploadZone 
+              onFilesSelected={processFiles} 
+              isProcessing={isProcessing} 
+            />
+          </div>
+
+          {resumes.length > 0 && (
+            <Dashboard 
+              resumes={resumes} 
+              onDeleteResume={deleteResume} 
+            />
+          )}
+        </section>
+      </main>
+
+      <footer className="border-t border-border py-8">
+        <div className="container text-center text-sm text-muted-foreground">
+          <p>© 2024 ResumeAI. Intelligent Resume Classification.</p>
+        </div>
+      </footer>
     </div>
   );
 };
